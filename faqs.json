@@ -1,0 +1,156 @@
+[
+  {
+    "id": "what-is-lingua",
+    "category": "Getting started",
+    "question": "What is Lingua?",
+    "answer": "Lingua is a browser-based translation tool for translating short text between languages. Choose a source and target language, enter your text, and view the result beside the original.",
+    "keywords": "about Lingua translation tool translator purpose"
+  },
+  {
+    "id": "translate-text",
+    "category": "Getting started",
+    "question": "How do I translate text?",
+    "answer": "Open the Translate page, select the source and target languages, enter or paste your text, then select Translate. The translated result appears in the panel on the right.",
+    "keywords": "translate message sentence phrase words use start"
+  },
+  {
+    "id": "languages",
+    "category": "Languages",
+    "question": "Which languages does Lingua support?",
+    "answer": "Lingua offers 17 languages: English, Swahili, French, Spanish, Arabic, Portuguese, German, Italian, Hindi, Chinese (Simplified), Japanese, Korean, Dutch, Russian, Turkish, Somali, and Amharic.",
+    "keywords": "available supported language list options"
+  },
+  {
+    "id": "select-language",
+    "category": "Languages",
+    "question": "How do I change a source or target language?",
+    "answer": "Select either language field above the text panels. Search or scroll the list, then choose a language. Use the swap control between the fields to switch source and target.",
+    "keywords": "choose change set select source target dropdown picker swap"
+  },
+  {
+    "id": "language-pairs",
+    "category": "Languages",
+    "question": "Can I translate between any two languages?",
+    "answer": "You can select any pair shown in the source and target language menus. Translation availability and quality can differ between language pairs.",
+    "keywords": "pair combination languages available work quality"
+  },
+  {
+    "id": "text-limit",
+    "category": "Using translations",
+    "question": "How much text can I translate at once?",
+    "answer": "A single request supports up to 500 bytes of source text. The counter near the input shows the current size. The byte count can differ from the number of characters for some languages.",
+    "keywords": "maximum big large size length much text amount input request per translation 500 byte character count too long"
+  },
+  {
+    "id": "clear-text",
+    "category": "Using translations",
+    "question": "How do I clear the text I entered?",
+    "answer": "Select the clear control in the source text panel to remove the current text and start a new translation.",
+    "keywords": "remove erase reset delete input source"
+  },
+  {
+    "id": "copy",
+    "category": "Using translations",
+    "question": "How can I copy a translation?",
+    "answer": "After a translation appears, select the copy button in the result panel. Your browser may ask for clipboard permission on some pages.",
+    "keywords": "clipboard copy copied result output"
+  },
+  {
+    "id": "speech",
+    "category": "Using translations",
+    "question": "Can Lingua read text aloud?",
+    "answer": "Yes. Use the speaker controls to listen to the source or translated text. Speech playback depends on your browser and the voices installed on your device.",
+    "keywords": "speak audio voice sound listen pronunciation read aloud"
+  },
+  {
+    "id": "voice-input",
+    "category": "Using translations",
+    "question": "Can I dictate text instead of typing?",
+    "answer": "If your browser supports speech recognition, select the microphone control in the source panel and allow microphone access. Availability varies by browser and device.",
+    "keywords": "voice input microphone dictate speech recognition talk type"
+  },
+  {
+    "id": "history",
+    "category": "Saving and privacy",
+    "question": "Where can I find recent translations?",
+    "answer": "Open History from the main navigation to review translations made during the current page session. History is held in the page and may be cleared when you close or reload it.",
+    "keywords": "recent previous history find past session saved"
+  },
+  {
+    "id": "save",
+    "category": "Saving and privacy",
+    "question": "How do I save a translation?",
+    "answer": "Select the bookmark control in the result panel to save a translation. Open Saved from the main navigation to review it later on this browser.",
+    "keywords": "bookmark keep favorite store later saved"
+  },
+  {
+    "id": "saved-storage",
+    "category": "Saving and privacy",
+    "question": "Where are saved translations stored?",
+    "answer": "Saved translations are stored in local storage in your browser on this device. They are not synced to an account or another device. Clearing browser site data can remove them.",
+    "keywords": "local storage device browser sync account data delete"
+  },
+  {
+    "id": "account",
+    "category": "Saving and privacy",
+    "question": "Do I need an account to use Lingua?",
+    "answer": "No. Lingua does not require an account to translate text, review session history, or save phrases in your browser.",
+    "keywords": "sign up login register profile account"
+  },
+  {
+    "id": "translation-provider",
+    "category": "Saving and privacy",
+    "question": "Which service processes translations?",
+    "answer": "Lingua sends translation text and the selected language pair to the MyMemory Translation API. MyMemory's service terms and availability apply to those requests.",
+    "keywords": "provider API service external translation mymemory"
+  },
+  {
+    "id": "privacy",
+    "category": "Saving and privacy",
+    "question": "Is my text private?",
+    "answer": "Text entered for translation is sent to the MyMemory Translation API for processing. Avoid entering passwords, personal details, or other sensitive information.",
+    "keywords": "private confidential security personal sensitive data sent"
+  },
+  {
+    "id": "quota",
+    "category": "Saving and privacy",
+    "question": "Is there a daily translation quota?",
+    "answer": "Anonymous MyMemory use is subject to a daily limit of 5,000 characters. The service can reject requests after the quota is reached; the limit is controlled by MyMemory.",
+    "keywords": "daily anonymous API 5000 character per day usage allowance remaining"
+  },
+  {
+    "id": "offline",
+    "category": "Troubleshooting",
+    "question": "Does Lingua work offline?",
+    "answer": "The interface can load if its files are available, but translating requires an internet connection because requests are sent to MyMemory.",
+    "keywords": "offline disconnected internet network connection"
+  },
+  {
+    "id": "no-result",
+    "category": "Troubleshooting",
+    "question": "Why is my translation not appearing?",
+    "answer": "Confirm that both languages are selected and the source text is within the 500-byte limit. Check your internet connection and try again. MyMemory may also be temporarily unavailable or have reached its anonymous quota.",
+    "keywords": "error failed missing blank result network API issue"
+  },
+  {
+    "id": "quality",
+    "category": "Troubleshooting",
+    "question": "Why does a translation sound incorrect?",
+    "answer": "Automatic translation can miss context, idioms, and tone. Try a shorter sentence with more context. For important writing, have the translation reviewed by a fluent speaker.",
+    "keywords": "accuracy wrong quality mistake incorrect meaning context"
+  },
+  {
+    "id": "browser-tools",
+    "category": "Troubleshooting",
+    "question": "Why are copy or speech controls unavailable?",
+    "answer": "Clipboard access can require a secure page and browser permission. Speech tools depend on browser support and installed system voices. Check your browser and device settings.",
+    "keywords": "copy speech permission browser unavailable disabled voice"
+  },
+  {
+    "id": "chat-language",
+    "category": "Using the help center",
+    "question": "Can I ask the help chatbot in another language?",
+    "answer": "The help guide and question matching are currently designed for English questions. You can still use Lingua itself to translate text between the supported languages.",
+    "keywords": "question ask chatbot language multilingual english"
+  }
+]
