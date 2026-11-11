@@ -1,27 +1,11 @@
 const FAQS_URL = "/api/faqs";
 const ASK_URL = "/api/ask";
 const QUICK_QUESTIONS = ["Which languages does Lingua support?", "How much text can I translate?", "Where are saved translations stored?"];
-const POPULAR_IDS = ["languages", "text-limit", "privacy", "save", "offline", "speech", "voice-input", "copy", "translate-text", "select-language", "history", "quality"];
-const TOPIC_DETAILS = {
-  languages: { icon: "languages", description: "Explore all 17 supported languages." },
-  "text-limit": { icon: "ruler", description: "Learn about the 500-byte limit." },
-  privacy: { icon: "shield-check", description: "What happens to text you translate." },
-  save: { icon: "bookmark", description: "Keep useful translations close." },
-  offline: { icon: "wifi-off", description: "Using Lingua without a connection." },
-  speech: { icon: "volume-2", description: "Listen to translated text aloud." },
-  "voice-input": { icon: "mic", description: "Dictate text with your microphone." },
-  copy: { icon: "copy", description: "Copy a result to your clipboard." },
-  "translate-text": { icon: "message-square-text", description: "A quick guide to your first translation." },
-  "select-language": { icon: "arrow-left-right", description: "Choose and swap language pairs." },
-  history: { icon: "history", description: "Find recent translations in this session." },
-  quality: { icon: "badge-check", description: "Get more from automatic translation." }
-};
 const $ = selector => document.querySelector(selector);
 const messages = $("#messages");
 const input = $("#question-input");
 const sendButton = $(".send-button");
 const quickAsks = $("#quick-asks");
-const popularQuestions = $("#popular-questions");
 const faqList = $("#faq-list");
 const faqSearch = $("#faq-search");
 const categories = $("#categories");
@@ -32,7 +16,10 @@ let activeCategory = "All";
 let activeView = "chat";
 let navigationTimer;
 let isAnswering = false;
-let topicsExpanded = false;
+
+function formattedTime(date = new Date()) {
+  return new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" }).format(date);
+}
 
 function refreshIcons(root = document) {
   window.lucide?.createIcons({ root });
@@ -87,6 +74,11 @@ function appendMessage(text, role, source = "") {
   bubble.className = `bubble ${role}-bubble`;
   bubble.textContent = text;
   content.append(sender, bubble);
+  const timestamp = document.createElement("time");
+  timestamp.className = "message-time";
+  timestamp.dateTime = new Date().toISOString();
+  timestamp.textContent = formattedTime();
+  content.append(timestamp);
   if (source) {
     const attribution = document.createElement("span");
     attribution.className = "message-source";
@@ -109,48 +101,6 @@ function renderQuestionButtons(container, questions, className) {
     button.addEventListener("click", () => askQuestion(button.textContent));
     container.append(button);
   });
-}
-
-function renderPopularTopics() {
-  const topics = POPULAR_IDS.map(id => faqItems.find(item => item.id === id)).filter(Boolean);
-  popularQuestions.replaceChildren();
-  topics.forEach((item, index) => {
-    const detail = TOPIC_DETAILS[item.id] || { icon: "circle-help", description: item.category };
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "popular-question";
-    button.style.setProperty("--topic-index", index);
-    button.setAttribute("aria-label", `${item.question} ${detail.description}`);
-    const icon = document.createElement("span");
-    icon.className = "topic-icon";
-    icon.setAttribute("aria-hidden", "true");
-    const iconElement = document.createElement("i");
-    iconElement.dataset.lucide = detail.icon;
-    icon.append(iconElement);
-    const text = document.createElement("span");
-    text.className = "topic-copy";
-    const title = document.createElement("strong");
-    title.textContent = item.question;
-    const description = document.createElement("small");
-    description.textContent = detail.description;
-    text.append(title, description);
-    const arrow = document.createElement("i");
-    arrow.dataset.lucide = "arrow-up-right";
-    arrow.className = "topic-arrow";
-    arrow.setAttribute("aria-hidden", "true");
-    button.append(icon, text, arrow);
-    button.addEventListener("click", () => askQuestion(item.question));
-    popularQuestions.append(button);
-  });
-  popularQuestions.classList.toggle("expanded", topicsExpanded);
-  const moreTopics = $("#more-topics");
-  moreTopics.hidden = topics.length <= 6;
-  moreTopics.setAttribute("aria-expanded", String(topicsExpanded));
-  moreTopics.innerHTML = topicsExpanded
-    ? 'Show fewer topics <i data-lucide="chevron-up" aria-hidden="true"></i>'
-    : 'More popular topics <i data-lucide="chevron-down" aria-hidden="true"></i>';
-  refreshIcons(popularQuestions);
-  refreshIcons(moreTopics);
 }
 
 async function askQuestion(value) {
@@ -257,9 +207,9 @@ async function loadFaqs() {
     if (!response.ok) throw new Error("FAQ guide could not be loaded.");
     faqItems = await response.json();
     $("#faq-count").textContent = String(faqItems.length);
-    $("#article-total").textContent = `${faqItems.length} articles`;
+    $("#welcome-time").dateTime = new Date().toISOString();
+    $("#welcome-time").textContent = formattedTime();
     renderQuestionButtons(quickAsks, QUICK_QUESTIONS, "quick-ask-chip");
-    renderPopularTopics();
     renderFaqList();
     refreshIcons();
   } catch (error) {
@@ -270,7 +220,6 @@ async function loadFaqs() {
 }
 
 document.querySelectorAll("[data-view]").forEach(button => button.addEventListener("click", () => setView(button.dataset.view)));
-$("#more-topics").addEventListener("click", () => { topicsExpanded = !topicsExpanded; renderPopularTopics(); });
 $("#chat-form").addEventListener("submit", event => { event.preventDefault(); askQuestion(input.value); });
 input.addEventListener("input", () => { sendButton.disabled = !input.value.trim() || isAnswering; });
 faqSearch.addEventListener("input", renderFaqList);

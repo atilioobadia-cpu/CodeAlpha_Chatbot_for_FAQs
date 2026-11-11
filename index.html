@@ -29,46 +29,37 @@
       <section class="page-intro" aria-labelledby="page-title">
         <div>
           <p class="eyebrow">LINGUA HELP CENTER</p>
-          <h1 id="page-title">Answers for a smoother translation.</h1>
-          <p class="intro-copy">Ask a question or browse the help guide. Answers are matched from Lingua’s frequently asked questions.</p>
+          <h1 id="page-title">Ask the Lingua assistant</h1>
+          <p class="intro-copy">Get clear answers from the Lingua translation help guide.</p>
         </div>
-        <div class="intro-note"><i data-lucide="circle-help" aria-hidden="true"></i><span><strong>Need a quick answer?</strong><br>Start with a common question below.</span></div>
       </section>
 
       <div class="view-shell" id="view-shell">
         <section class="view chat-view active" id="chat-view" aria-label="Ask a question">
           <section class="chat-panel" aria-label="Lingua support conversation">
             <div class="panel-heading">
-              <div class="panel-icon" aria-hidden="true"><i data-lucide="messages-square"></i></div>
-              <div><h2>Ask Lingua</h2><p>Get an answer from the help guide</p></div>
-              <span class="source-badge"><span></span> FAQ powered</span>
+              <div class="panel-icon assistant-online-icon" aria-hidden="true"><i data-lucide="messages-square"></i><span></span></div>
+              <div><h2>Lingua assistant</h2><p>Online · replies instantly</p></div>
             </div>
+            <div class="conversation-day"><span>Today</span></div>
             <div class="messages" id="messages" aria-live="polite" aria-label="Conversation">
               <article class="message-row assistant-row">
                 <span class="message-avatar" aria-hidden="true"><i data-lucide="message-circle"></i></span>
-                <div class="message-content"><span class="sender">Lingua support</span><div class="bubble assistant-bubble">Hello. Ask me about languages, translations, saved phrases, privacy, or troubleshooting and I’ll find the closest answer in the guide.</div><span class="message-source">Help guide · Ready to assist</span></div>
+                <div class="message-content"><span class="sender">Lingua support</span><div class="bubble assistant-bubble">Hello! I can help with languages, translations, saved phrases, privacy, and troubleshooting. What would you like to know?</div><time class="message-time" id="welcome-time"></time><span class="message-source">Answering from the Lingua FAQ guide</span></div>
               </article>
             </div>
             <div class="quick-asks">
-              <div class="quick-asks-heading"><span>COMMON QUESTIONS</span><button class="text-link" type="button" data-view="faq">See all FAQs <i data-lucide="arrow-up-right" aria-hidden="true"></i></button></div>
+              <div class="quick-asks-heading"><span>SUGGESTED QUESTIONS</span><button class="text-link" type="button" data-view="faq">Browse all FAQs <i data-lucide="arrow-up-right" aria-hidden="true"></i></button></div>
               <div class="quick-ask-list" id="quick-asks"></div>
             </div>
             <form class="composer" id="chat-form">
               <label class="sr-only" for="question-input">Ask a question about Lingua</label>
-              <i class="composer-search-icon" data-lucide="search" aria-hidden="true"></i><input id="question-input" type="text" placeholder="Search the guide, or say hello!" autocomplete="off" maxlength="240">
+              <input id="question-input" type="text" placeholder="Type your question..." autocomplete="off" maxlength="240">
               <span class="composer-hint">Enter to send</span>
-              <button class="send-button" type="submit" aria-label="Send question" disabled><i data-lucide="arrow-up" aria-hidden="true"></i></button>
+              <button class="send-button" type="submit" aria-label="Send question" disabled><i data-lucide="send" aria-hidden="true"></i></button>
             </form>
-            <p class="privacy-note">Answers are selected from the local Lingua help guide. No generative AI or account is required.</p>
+            <p class="privacy-note">Answers come from the curated Lingua FAQ guide.</p>
           </section>
-
-          <aside class="popular-panel" aria-labelledby="popular-title">
-            <div class="aside-heading"><div><p class="eyebrow">HELP GUIDE</p><h2 id="popular-title">Popular topics</h2></div><span class="article-total" id="article-total">22 articles</span></div>
-            <p class="aside-copy">Choose a question to get a quick answer, or open the full FAQ library.</p>
-            <div class="popular-list" id="popular-questions"></div>
-            <button class="more-topics-button" id="more-topics" type="button" aria-expanded="false">More popular topics <i data-lucide="chevron-down" aria-hidden="true"></i></button>
-            <button class="browse-all-button" type="button" data-view="faq">Browse all help articles <i data-lucide="arrow-right" aria-hidden="true"></i></button>
-          </aside>
         </section>
 
         <section class="view faq-view" id="faq-view" aria-label="Frequently asked questions" hidden>
