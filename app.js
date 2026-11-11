@@ -241,7 +241,7 @@ async function loadFaqs() {
     $("#welcome-time").dateTime = new Date().toISOString();
     $("#welcome-time").textContent = formattedTime();
     const suggestedQuestions = faqItems.filter(item => item.suggested).map(item => item.question);
-    renderQuestionButtons(quickAsks, suggestedQuestions, "quick-ask-chip");
+    if (suggestedQuestions.length) renderQuestionButtons(quickAsks, suggestedQuestions, "quick-ask-chip");
     renderFaqList();
     refreshIcons();
   } catch (error) {

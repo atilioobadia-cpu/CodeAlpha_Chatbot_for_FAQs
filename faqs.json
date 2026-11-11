@@ -1,7 +1,6 @@
 [
   {
     "id": "about-codealpha",
-    "suggested": true,
     "category": "About CodeAlpha",
     "question": "What is CodeAlpha?",
     "answer": "CodeAlpha offers virtual internships and practical assignments intended to help learners build skills and portfolio projects. The specific program details and deadlines are provided in your offer letter and internship materials.",
@@ -44,7 +43,6 @@
   },
   {
     "id": "ai-task-count",
-    "suggested": true,
     "category": "AI internship tasks",
     "question": "How many AI tasks do I need to complete?",
     "answer": "The AI task sheet says to complete any two or three of the four listed tasks. It also says submitting only one task is incomplete, so plan to submit at least two and follow your cohort's submission form.",
@@ -52,7 +50,6 @@
   },
   {
     "id": "ai-task-list",
-    "suggested": true,
     "category": "AI internship tasks",
     "question": "What are the four Artificial Intelligence tasks?",
     "answer": "The task sheet lists a Language Translation Tool, an FAQ Chatbot, Music Generation with AI, and Object Detection and Tracking. Choose two or three tasks and follow each task's individual requirements.",
@@ -88,7 +85,6 @@
   },
   {
     "id": "repo-name",
-    "suggested": true,
     "category": "GitHub and LinkedIn",
     "question": "How should I name my GitHub repository?",
     "answer": "The internship instructions specify the format CodeAlpha_ProjectName. Replace ProjectName with the name of your project, for example CodeAlpha_FAQChatbot.",
@@ -117,7 +113,6 @@
   },
   {
     "id": "submission-form",
-    "suggested": true,
     "category": "Submissions and certificates",
     "question": "How do I submit a completed task?",
     "answer": "Submit your completed task through the submission form shared in your WhatsApp group. Follow the form's instructions and include the required project links and details.",
