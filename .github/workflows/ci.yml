@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate app
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Check Python syntax
+        run: python -m compileall -q server.py
+
+      - name: Check JavaScript syntax
+        run: node --check app.js
+
+      - name: Smoke-test FAQ API
+        run: |
+          python - <<'PY'
+          from server import app
+
+          client = app.test_client()
+          health = client.get("/api/health")
+          assert health.status_code == 200
+          faq_response = client.get("/api/faqs")
+          assert faq_response.status_code == 200
+          assert health.get_json()["faq_count"] == len(faq_response.get_json())
+          assert health.get_json()["faq_count"] > 0
+
+          match = client.post("/api/ask", json={"question": "How big can my text be?"})
+          assert match.status_code == 200
+          assert match.get_json()["matched"] is True
+          assert "500 bytes" in match.get_json()["answer"]
+
+          fallback = client.post("/api/ask", json={"question": "What is the weather in Nairobi?"})
+          assert fallback.status_code == 200
+          assert fallback.get_json()["matched"] is False
+          PY
+
+

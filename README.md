@@ -1,6 +1,12 @@
 # Lingua FAQ Chatbot
 
+[![CI](https://github.com/atilioobadia-cpu/CodeAlpha_Chatbot_for_FAQs/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/atilioobadia-cpu/CodeAlpha_Chatbot_for_FAQs/actions/workflows/ci.yml)
+
 Lingua FAQ Chatbot is a web-based help center for answering common questions about the Lingua translation tool. Visitors can ask questions in a chat interface or browse a searchable FAQ library. The chatbot ranks the help articles with TF-IDF and cosine similarity, then returns the closest answer when its relevance score meets the match threshold.
+
+## Continuous integration
+
+GitHub Actions checks Python and JavaScript syntax and smoke-tests FAQ matching and fallback behavior on pushes and pull requests to `main`.
 
 ## Features
 
@@ -71,4 +77,3 @@ Questions sent to the chatbot are processed by the local Flask service and are n
 ## Credits
 
 Icons are provided by [Lucide](https://lucide.dev/), an open-source icon library. FAQ answers describe the Lingua translation tool and its MyMemory translation service.
-
