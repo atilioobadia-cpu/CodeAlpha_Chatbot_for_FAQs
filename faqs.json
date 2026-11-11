@@ -1,156 +1,156 @@
 [
   {
-    "id": "what-is-lingua",
+    "id": "about-codealpha",
+    "category": "About CodeAlpha",
+    "question": "What is CodeAlpha?",
+    "answer": "CodeAlpha offers virtual internships and practical assignments intended to help learners build skills and portfolio projects. The specific program details and deadlines are provided in your offer letter and internship materials.",
+    "keywords": "company organization about platform virtual online internship practical projects experience"
+  },
+  {
+    "id": "apply",
     "category": "Getting started",
-    "question": "What is Lingua?",
-    "answer": "Lingua is a browser-based translation tool for translating short text between languages. Choose a source and target language, enter your text, and view the result beside the original.",
-    "keywords": "about Lingua translation tool translator purpose"
+    "question": "How do I apply for a CodeAlpha internship?",
+    "answer": "Use the application or registration link provided by CodeAlpha. Select your internship domain, submit the requested details, and watch for follow-up instructions or an offer letter.",
+    "keywords": "apply register application form sign up begin start internship domain registration"
   },
   {
-    "id": "translate-text",
+    "id": "internship-journey",
     "category": "Getting started",
-    "question": "How do I translate text?",
-    "answer": "Open the Translate page, select the source and target languages, enter or paste your text, then select Translate. The translated result appears in the panel on the right.",
-    "keywords": "translate message sentence phrase words use start"
+    "question": "What happens after I apply?",
+    "answer": "CodeAlpha describes a process that moves from application and review to an offer, assigned tasks, project work, submission, evaluation, and certification. Follow the dates and steps in your own offer and task instructions.",
+    "keywords": "after apply process steps review offer letter assignments code submit evaluate certification journey"
   },
   {
-    "id": "languages",
-    "category": "Languages",
-    "question": "Which languages does Lingua support?",
-    "answer": "Lingua offers 17 languages: English, Swahili, French, Spanish, Arabic, Portuguese, German, Italian, Hindi, Chinese (Simplified), Japanese, Korean, Dutch, Russian, Turkish, Somali, and Amharic.",
-    "keywords": "available supported language list options"
+    "id": "format-duration",
+    "category": "Getting started",
+    "question": "Are CodeAlpha internships online, and how long do they last?",
+    "answer": "CodeAlpha describes its internships as virtual and its current website describes a four-week program. Check your offer letter for the schedule and dates that apply to your cohort.",
+    "keywords": "remote virtual online at home duration weeks schedule flexible timing length"
   },
   {
-    "id": "select-language",
-    "category": "Languages",
-    "question": "How do I change a source or target language?",
-    "answer": "Select either language field above the text panels. Search or scroll the list, then choose a language. Use the swap control between the fields to switch source and target.",
-    "keywords": "choose change set select source target dropdown picker swap"
+    "id": "domains",
+    "category": "About CodeAlpha",
+    "question": "Which internship domains are available?",
+    "answer": "CodeAlpha lists programs in areas including web development, app development, machine learning, C++, Java, and graphic design. Available tracks can change, so use the domain shown in your application or offer letter.",
+    "keywords": "domain field track web development app mobile machine learning AI C++ Java graphic design options"
   },
   {
-    "id": "language-pairs",
-    "category": "Languages",
-    "question": "Can I translate between any two languages?",
-    "answer": "You can select any pair shown in the source and target language menus. Translation availability and quality can differ between language pairs.",
-    "keywords": "pair combination languages available work quality"
+    "id": "assignment-based",
+    "category": "Getting started",
+    "question": "What does an assignment-based internship involve?",
+    "answer": "You work through practical projects assigned for your chosen domain, build the required deliverables, and submit your work for evaluation. Your task sheet explains the project requirements and submission method.",
+    "keywords": "assignment project practical hands on deliverable task real work learn build evaluation"
   },
   {
-    "id": "text-limit",
-    "category": "Using translations",
-    "question": "How much text can I translate at once?",
-    "answer": "A single request supports up to 500 bytes of source text. The counter near the input shows the current size. The byte count can differ from the number of characters for some languages.",
-    "keywords": "maximum big large size length much text amount input request per translation 500 byte character count too long"
+    "id": "ai-task-count",
+    "category": "AI internship tasks",
+    "question": "How many AI tasks do I need to complete?",
+    "answer": "The AI task sheet says to complete any two or three of the four listed tasks. It also says submitting only one task is incomplete, so plan to submit at least two and follow your cohort's submission form.",
+    "keywords": "minimum number complete how many 2 two 3 three four tasks required only one incomplete"
   },
   {
-    "id": "clear-text",
-    "category": "Using translations",
-    "question": "How do I clear the text I entered?",
-    "answer": "Select the clear control in the source text panel to remove the current text and start a new translation.",
-    "keywords": "remove erase reset delete input source"
+    "id": "ai-task-list",
+    "category": "AI internship tasks",
+    "question": "What are the four Artificial Intelligence tasks?",
+    "answer": "The task sheet lists a Language Translation Tool, an FAQ Chatbot, Music Generation with AI, and Object Detection and Tracking. Choose two or three tasks and follow each task's individual requirements.",
+    "keywords": "list task one 1 task two 2 task three 3 task four 4 translation chatbot music object detection tracking"
   },
   {
-    "id": "copy",
-    "category": "Using translations",
-    "question": "How can I copy a translation?",
-    "answer": "After a translation appears, select the copy button in the result panel. Your browser may ask for clipboard permission on some pages.",
-    "keywords": "clipboard copy copied result output"
+    "id": "translation-task",
+    "category": "AI internship tasks",
+    "question": "What should the Language Translation Tool include?",
+    "answer": "Build an interface where users enter text and choose source and target languages. Send the text to a translation API, then display the translated result clearly. Copy and text-to-speech controls are optional enhancements.",
+    "keywords": "task 1 language translation translator source target select API Google Microsoft text translate output copy speech"
   },
   {
-    "id": "speech",
-    "category": "Using translations",
-    "question": "Can Lingua read text aloud?",
-    "answer": "Yes. Use the speaker controls to listen to the source or translated text. Speech playback depends on your browser and the voices installed on your device.",
-    "keywords": "speak audio voice sound listen pronunciation read aloud"
+    "id": "faq-chatbot-task",
+    "category": "AI internship tasks",
+    "question": "What should the FAQ Chatbot do?",
+    "answer": "Collect questions and answers about a topic or product, preprocess text with an NLP library such as NLTK or spaCy, and match a user question to the closest FAQ using cosine similarity or intent matching. Show the best matching answer; a simple chat interface is optional.",
+    "keywords": "task 2 chatbot FAQ frequently asked questions NLP tokenize clean preprocess NLTK spaCy cosine similarity intent matching answer chat interface"
   },
   {
-    "id": "voice-input",
-    "category": "Using translations",
-    "question": "Can I dictate text instead of typing?",
-    "answer": "If your browser supports speech recognition, select the microphone control in the source panel and allow microphone access. Availability varies by browser and device.",
-    "keywords": "voice input microphone dictate speech recognition talk type"
+    "id": "music-task",
+    "category": "AI internship tasks",
+    "question": "What is required for Music Generation with AI?",
+    "answer": "The task describes collecting MIDI music, preparing note sequences, training an RNN such as an LSTM or a GAN to generate new sequences, then converting the generated music to MIDI for playback or saving.",
+    "keywords": "task 3 music generation MIDI dataset notes sequences music21 RNN LSTM GAN train generate audio save"
   },
   {
-    "id": "history",
-    "category": "Saving and privacy",
-    "question": "Where can I find recent translations?",
-    "answer": "Open History from the main navigation to review translations made during the current page session. History is held in the page and may be cleared when you close or reload it.",
-    "keywords": "recent previous history find past session saved"
+    "id": "object-detection-task",
+    "category": "AI internship tasks",
+    "question": "What is required for Object Detection and Tracking?",
+    "answer": "Use OpenCV with a webcam or video file, detect objects with a pretrained model such as YOLO or Faster R-CNN, draw labeled boxes on frames, and track objects with an algorithm such as SORT or Deep SORT.",
+    "keywords": "task 4 object detection tracking OpenCV webcam video YOLO Faster R-CNN bounding boxes labels SORT Deep SORT"
   },
   {
-    "id": "save",
-    "category": "Saving and privacy",
-    "question": "How do I save a translation?",
-    "answer": "Select the bookmark control in the result panel to save a translation. Open Saved from the main navigation to review it later on this browser.",
-    "keywords": "bookmark keep favorite store later saved"
+    "id": "repo-name",
+    "category": "GitHub and LinkedIn",
+    "question": "How should I name my GitHub repository?",
+    "answer": "The internship instructions specify the format CodeAlpha_ProjectName. Replace ProjectName with the name of your project, for example CodeAlpha_FAQChatbot.",
+    "keywords": "github repository repo naming name CodeAlpha_ProjectName project source code"
   },
   {
-    "id": "saved-storage",
-    "category": "Saving and privacy",
-    "question": "Where are saved translations stored?",
-    "answer": "Saved translations are stored in local storage in your browser on this device. They are not synced to an account or another device. Clearing browser site data can remove them.",
-    "keywords": "local storage device browser sync account data delete"
+    "id": "upload-source",
+    "category": "GitHub and LinkedIn",
+    "question": "What should I upload to GitHub?",
+    "answer": "Upload the complete source code for your finished project to the repository named with the required CodeAlpha_ProjectName format. Include the files needed to understand and run the project.",
+    "keywords": "upload push publish code complete source files project github repository commit"
   },
   {
-    "id": "account",
-    "category": "Saving and privacy",
-    "question": "Do I need an account to use Lingua?",
-    "answer": "No. Lingua does not require an account to translate text, review session history, or save phrases in your browser.",
-    "keywords": "sign up login register profile account"
+    "id": "linkedin-status",
+    "category": "GitHub and LinkedIn",
+    "question": "Should I post my internship status on LinkedIn?",
+    "answer": "Yes. The instructions ask interns to share their internship status on LinkedIn and tag @CodeAlpha.",
+    "keywords": "LinkedIn post share status announce tag mention CodeAlpha"
   },
   {
-    "id": "translation-provider",
-    "category": "Saving and privacy",
-    "question": "Which service processes translations?",
-    "answer": "Lingua sends translation text and the selected language pair to the MyMemory Translation API. MyMemory's service terms and availability apply to those requests.",
-    "keywords": "provider API service external translation mymemory"
+    "id": "project-video",
+    "category": "GitHub and LinkedIn",
+    "question": "Do I need to make a video explaining my project?",
+    "answer": "Yes. The instructions ask you to post a project explanation video on LinkedIn and include a link to the GitHub repository.",
+    "keywords": "video explanation demo explain project LinkedIn github link repository"
   },
   {
-    "id": "privacy",
-    "category": "Saving and privacy",
-    "question": "Is my text private?",
-    "answer": "Text entered for translation is sent to the MyMemory Translation API for processing. Avoid entering passwords, personal details, or other sensitive information.",
-    "keywords": "private confidential security personal sensitive data sent"
+    "id": "submission-form",
+    "category": "Submissions and certificates",
+    "question": "How do I submit a completed task?",
+    "answer": "Submit your completed task through the submission form shared in your WhatsApp group. Follow the form's instructions and include the required project links and details.",
+    "keywords": "submit submission form WhatsApp group turn in completed task link instructions"
   },
   {
-    "id": "quota",
-    "category": "Saving and privacy",
-    "question": "Is there a daily translation quota?",
-    "answer": "Anonymous MyMemory use is subject to a daily limit of 5,000 characters. The service can reject requests after the quota is reached; the limit is controlled by MyMemory.",
-    "keywords": "daily anonymous API 5000 character per day usage allowance remaining"
+    "id": "deadline",
+    "category": "Submissions and certificates",
+    "question": "Where can I find my task deadline?",
+    "answer": "The general task document says to finish within the stated time frame but does not give an individual date. Check your offer letter, task message, and WhatsApp group for your cohort's deadline.",
+    "keywords": "deadline due date time frame when finish schedule extension late cohort WhatsApp"
   },
   {
-    "id": "offline",
-    "category": "Troubleshooting",
-    "question": "Does Lingua work offline?",
-    "answer": "The interface can load if its files are available, but translating requires an internet connection because requests are sent to MyMemory.",
-    "keywords": "offline disconnected internet network connection"
+    "id": "internship-benefits",
+    "category": "Submissions and certificates",
+    "question": "What benefits are listed for interns?",
+    "answer": "The internship overview lists an offer letter, a QR-verified completion certificate, a unique ID certificate, possible recommendation letters based on performance, job opportunities or placement support, and resume-building support.",
+    "keywords": "benefit perks offer letter certificate unique ID recommendation job placement resume support"
   },
   {
-    "id": "no-result",
-    "category": "Troubleshooting",
-    "question": "Why is my translation not appearing?",
-    "answer": "Confirm that both languages are selected and the source text is within the 500-byte limit. Check your internet connection and try again. MyMemory may also be temporarily unavailable or have reached its anonymous quota.",
-    "keywords": "error failed missing blank result network API issue"
+    "id": "completion-certificate",
+    "category": "Submissions and certificates",
+    "question": "How can I receive my completion certificate?",
+    "answer": "The instructions say that completing only one task is insufficient for internship completion. Complete the required two or three tasks, submit them through the form, and follow the evaluation and certificate instructions for your cohort.",
+    "keywords": "completion certificate complete tasks evaluation QR verified certificate receive"
   },
   {
-    "id": "quality",
-    "category": "Troubleshooting",
-    "question": "Why does a translation sound incorrect?",
-    "answer": "Automatic translation can miss context, idioms, and tone. Try a shorter sentence with more context. For important writing, have the translation reviewed by a fluent speaker.",
-    "keywords": "accuracy wrong quality mistake incorrect meaning context"
+    "id": "recommendation-letter",
+    "category": "Submissions and certificates",
+    "question": "Does every intern receive a recommendation letter?",
+    "answer": "The internship overview says recommendation letters are based on performance, so they are not listed as automatic for every intern. Complete and submit your work carefully.",
+    "keywords": "recommendation letter LOR reference performance eligibility every intern guarantee"
   },
   {
-    "id": "browser-tools",
-    "category": "Troubleshooting",
-    "question": "Why are copy or speech controls unavailable?",
-    "answer": "Clipboard access can require a secure page and browser permission. Speech tools depend on browser support and installed system voices. Check your browser and device settings.",
-    "keywords": "copy speech permission browser unavailable disabled voice"
-  },
-  {
-    "id": "chat-language",
-    "category": "Using the help center",
-    "question": "Can I ask the help chatbot in another language?",
-    "answer": "The help guide and question matching are currently designed for English questions. You can still use Lingua itself to translate text between the supported languages.",
-    "keywords": "question ask chatbot language multilingual english"
+    "id": "contact-support",
+    "category": "Support",
+    "question": "Where can I get help with internship instructions?",
+    "answer": "For task-specific questions, check your offer letter and ask in your cohort's WhatsApp group. The task sheet you shared lists WhatsApp +91 9336576683 and services@codealpha.tech; CodeAlpha's current website lists support@codealpha.tech for general support.",
+    "keywords": "contact support email help WhatsApp phone coordinator ask issue question services CodeAlpha"
   }
 ]

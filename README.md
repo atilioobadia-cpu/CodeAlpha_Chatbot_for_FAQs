@@ -1,8 +1,8 @@
-# Lingua FAQ Chatbot
+# CodeAlpha Internship FAQ Chatbot
 
 [![CI](https://github.com/atilioobadia-cpu/CodeAlpha_Chatbot_for_FAQs/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/atilioobadia-cpu/CodeAlpha_Chatbot_for_FAQs/actions/workflows/ci.yml)
 
-Lingua FAQ Chatbot is a web-based help center for answering common questions about the Lingua translation tool. Visitors can ask questions in a chat interface or browse a searchable FAQ library. The chatbot ranks the help articles with TF-IDF and cosine similarity, then returns the closest answer when its relevance score meets the match threshold.
+CodeAlpha Internship FAQ Chatbot is a web-based assistant for common questions about CodeAlpha internships, the four AI tasks, GitHub and LinkedIn instructions, submissions, and certificates. Visitors can ask questions in a chat interface or search the FAQ library. The chatbot ranks curated answers with TF-IDF and cosine similarity, then returns the closest match when its relevance score meets the threshold.
 
 ## Continuous integration
 
@@ -16,7 +16,7 @@ GitHub Actions checks Python and JavaScript syntax and smoke-tests FAQ matching 
 - Scikit-learn TF-IDF vectors and cosine similarity for FAQ matching.
 - A relevance threshold and a clear fallback when no FAQ is a good match.
 - Local Flask API with a narrow mobile-sized preview on desktop and edge-to-edge layout on mobile.
-- Curated FAQs about Lingua's translation, language choices, saved items, privacy, and troubleshooting.
+- Curated FAQs based on the CodeAlpha internship overview, AI task sheet, and official program information.
 
 ## Requirements
 
@@ -53,7 +53,7 @@ This is deterministic FAQ retrieval, not a generative AI system. Answers come on
 | --- | --- | --- |
 | `GET` | `/api/health` | Check that the service is running and read the FAQ count. |
 | `GET` | `/api/faqs` | Load the FAQ content for browsing. |
-| `POST` | `/api/ask` | Rank the FAQs for a question. Send JSON such as `{"question":"How do I save a translation?"}`. |
+| `POST` | `/api/ask` | Rank the FAQs for a question. Send JSON such as `{"question":"How many AI tasks do I need to complete?"}`. |
 
 ## Project structure
 
@@ -76,4 +76,4 @@ Questions sent to the chatbot are processed by the local Flask service and are n
 
 ## Credits
 
-Icons are provided by [Lucide](https://lucide.dev/), an open-source icon library. FAQ answers describe the Lingua translation tool and its MyMemory translation service.
+Icons are provided by [Lucide](https://lucide.dev/), an open-source icon library. Internship requirements in the sample FAQ set follow the supplied task instructions; general program information is based on [CodeAlpha's official website](https://www.codealpha.tech/).

@@ -1,6 +1,6 @@
 const FAQS_URL = "/api/faqs";
 const ASK_URL = "/api/ask";
-const QUICK_QUESTIONS = ["Which languages does Lingua support?", "How much text can I translate?", "Where are saved translations stored?"];
+const QUICK_QUESTIONS = ["How many AI tasks do I need to complete?", "How should I name my GitHub repository?", "How do I submit a completed task?"];
 const $ = selector => document.querySelector(selector);
 const messages = $("#messages");
 const input = $("#question-input");
@@ -69,7 +69,7 @@ function appendMessage(text, role, source = "") {
   content.className = "message-content";
   const sender = document.createElement("span");
   sender.className = "sender";
-  sender.textContent = role === "assistant" ? "Lingua support" : "You";
+  sender.textContent = role === "assistant" ? "CodeAlpha support" : "You";
   const bubble = document.createElement("div");
   bubble.className = `bubble ${role}-bubble`;
   bubble.textContent = text;
@@ -153,7 +153,7 @@ async function askQuestion(value) {
     loading.closest(".message-row")?.remove();
     const answer = result.matched
       ? result.answer
-      : "I couldn't find a close answer in the guide. Try asking about languages, translation limits, saved phrases, privacy, or troubleshooting, or browse the FAQ library.";
+      : "I couldn't find a close answer in the guide. Try asking about AI tasks, GitHub repositories, LinkedIn posts, submissions, or certificates, or browse the FAQ library.";
     const source = result.matched ? `${result.category} · ${result.question}` : "No close match";
     await typeReply(appendMessage("", "assistant", source), answer);
   } catch (error) {
