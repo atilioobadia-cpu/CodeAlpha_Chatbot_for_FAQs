@@ -18,14 +18,25 @@
         <span class="brand-icon" aria-hidden="true"><i data-lucide="messages-square"></i></span>
         <span class="brand-copy"><span>LINGUA SUPPORT</span><strong>Help Center</strong></span>
       </a>
-      <nav class="top-nav" aria-label="Help center navigation">
-        <button class="nav-link active" type="button" data-view="chat" aria-current="page"><i data-lucide="message-circle-question" aria-hidden="true"></i><span>Ask Lingua</span></button>
-        <button class="nav-link" type="button" data-view="faq"><i data-lucide="book-open-text" aria-hidden="true"></i><span>Browse FAQs</span><span class="nav-count" id="faq-count">22</span></button>
-      </nav>
-      <div class="header-meta"><span class="status-dot" aria-hidden="true"></span><span>Help guide available</span></div>
+      <div class="header-meta"><span class="status-dot" aria-hidden="true"></span><span>Support guide online</span><span class="header-divider"></span><span class="user-avatar" aria-label="Lingua support">L</span><span class="header-account">Lingua support</span><i data-lucide="chevron-down" aria-hidden="true"></i></div>
     </header>
 
-    <main class="main-content">
+    <div class="workspace-layout">
+      <aside class="sidebar" aria-label="Help center topics">
+        <div class="sidebar-caption">HELP CENTER</div>
+        <div class="sidebar-intro"><span class="sidebar-intro-icon"><i data-lucide="book-open-check" aria-hidden="true"></i></span><span><strong>Lingua support</strong><small><span class="status-dot" aria-hidden="true"></span> Ready to help</small></span></div>
+        <div class="sidebar-section-label">BROWSE BY TOPIC</div>
+        <div class="sidebar-categories" id="sidebar-categories"></div>
+        <div class="sidebar-summary"><i data-lucide="library-big" aria-hidden="true"></i><span><strong id="sidebar-article-count">22 help articles</strong><small>Answers about using Lingua</small></span></div>
+        <div class="sidebar-footer"><span class="sidebar-mark"><i data-lucide="languages" aria-hidden="true"></i></span><span><strong>Lingua</strong><small>Translation support</small></span></div>
+      </aside>
+
+      <div class="workspace-main">
+      <nav class="top-nav content-tabs" aria-label="Help center navigation">
+        <button class="nav-link active" type="button" data-view="chat" aria-current="page"><i data-lucide="messages-square" aria-hidden="true"></i><span>Ask Lingua</span></button>
+        <button class="nav-link" type="button" data-view="faq"><i data-lucide="book-open-text" aria-hidden="true"></i><span>FAQ library</span><span class="nav-count" id="faq-count">22</span></button>
+      </nav>
+      <main class="main-content">
       <section class="page-intro" aria-labelledby="page-title">
         <div>
           <p class="eyebrow">LINGUA HELP CENTER</p>
@@ -83,8 +94,10 @@
           <div class="faq-empty" id="faq-empty" hidden><i data-lucide="search-x" aria-hidden="true"></i><h3>No matching questions</h3><p>Try a different search, or ask Lingua directly.</p><button class="outline-button" type="button" data-view="chat">Ask Lingua</button></div>
         </section>
       </div>
-    </main>
-    <footer class="site-footer"><span>Lingua Help Center</span><span>Clear answers, in one place.</span></footer>
+      </main>
+      <footer class="site-footer"><span>Lingua Help Center</span><span>Clear answers, in one place.</span></footer>
+      </div>
+    </div>
   </div>
   <script src="/vendor/lucide.min.js"></script>
   <script src="/app.js"></script>

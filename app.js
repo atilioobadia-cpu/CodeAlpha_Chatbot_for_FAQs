@@ -25,6 +25,7 @@ const popularQuestions = $("#popular-questions");
 const faqList = $("#faq-list");
 const faqSearch = $("#faq-search");
 const categories = $("#categories");
+const sidebarCategories = $("#sidebar-categories");
 const resultCount = $("#result-count");
 const faqEmpty = $("#faq-empty");
 let faqItems = [];
@@ -53,6 +54,7 @@ function setView(view) {
   oldView.classList.add(`flip-out-${direction}`);
   nextView.classList.add("active", `flip-in-${direction}`);
   activeView = view;
+  renderCategories();
   document.querySelectorAll(".nav-link[data-view]").forEach(button => {
     const selected = button.dataset.view === view;
     button.classList.toggle("active", selected);
@@ -188,7 +190,8 @@ async function askQuestion(value) {
 
 function renderCategories() {
   categories.replaceChildren();
-  ["All", ...new Set(faqItems.map(item => item.category))].forEach(category => {
+  const categoryNames = ["All", ...new Set(faqItems.map(item => item.category))];
+  categoryNames.forEach(category => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `category-chip${activeCategory === category ? " active" : ""}`;
@@ -197,6 +200,39 @@ function renderCategories() {
     button.addEventListener("click", () => { activeCategory = category; renderFaqList(); });
     categories.append(button);
   });
+  sidebarCategories.replaceChildren();
+  const categoryIcons = {
+    All: "layout-dashboard",
+    "Getting started": "circle-play",
+    Languages: "languages",
+    "Using translations": "text-cursor-input",
+    "Saving and privacy": "shield-check",
+    Troubleshooting: "wrench",
+    "Using the help center": "messages-square"
+  };
+  categoryNames.forEach(category => {
+    const button = document.createElement("button");
+    const selected = activeView === "faq" && activeCategory === category;
+    const count = category === "All" ? faqItems.length : faqItems.filter(item => item.category === category).length;
+    button.type = "button";
+    button.className = `sidebar-category${selected ? " active" : ""}`;
+    button.setAttribute("aria-current", selected ? "true" : "false");
+    const icon = document.createElement("i");
+    icon.dataset.lucide = categoryIcons[category] || "folder-open";
+    icon.setAttribute("aria-hidden", "true");
+    const label = document.createElement("span");
+    label.textContent = category === "All" ? "All help articles" : category;
+    const badge = document.createElement("small");
+    badge.textContent = String(count);
+    button.append(icon, label, badge);
+    button.addEventListener("click", () => {
+      activeCategory = category;
+      renderFaqList();
+      setView("faq");
+    });
+    sidebarCategories.append(button);
+  });
+  refreshIcons(sidebarCategories);
 }
 
 function renderFaqList() {
@@ -258,6 +294,7 @@ async function loadFaqs() {
     faqItems = await response.json();
     $("#faq-count").textContent = String(faqItems.length);
     $("#article-total").textContent = `${faqItems.length} articles`;
+    $("#sidebar-article-count").textContent = `${faqItems.length} help articles`;
     renderQuestionButtons(quickAsks, QUICK_QUESTIONS, "quick-ask-chip");
     renderPopularTopics();
     renderFaqList();
