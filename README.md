@@ -15,7 +15,7 @@ GitHub Actions checks Python and JavaScript syntax and smoke-tests FAQ matching 
 - English text preprocessing with NLTK tokenization, stop-word removal, and stemming.
 - Scikit-learn TF-IDF vectors and cosine similarity for FAQ matching.
 - A relevance threshold and a clear fallback when no FAQ is a good match.
-- Local Flask API and responsive desktop-to-mobile web layout.
+- Local Flask API with a phone-style preview on desktop and edge-to-edge layout on mobile.
 - Curated FAQs about Lingua's translation, language choices, saved items, privacy, and troubleshooting.
 
 ## Requirements
@@ -43,7 +43,7 @@ Open [http://127.0.0.1:4174](http://127.0.0.1:4174) in your browser. The first r
 2. NLTK tokenizes each question, removes common English stop words, and stems remaining words.
 3. Scikit-learn builds TF-IDF vectors from the processed FAQ text. Each question and its curated matching keywords are weighted to improve matching when a visitor uses different wording.
 4. Each incoming question is processed the same way and compared with FAQ vectors using cosine similarity.
-5. The closest answer is returned when its similarity is at least `0.12`; otherwise, the chat explains that it did not find a close match.
+5. The closest answer is returned when its similarity is at least `0.18`; otherwise, the chat explains that it did not find a close match.
 
 This is deterministic FAQ retrieval, not a generative AI system. Answers come only from the curated FAQ set.
 
