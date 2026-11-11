@@ -78,3 +78,9 @@ Questions sent to the chatbot are processed by the local Flask service and are n
 ## Credits
 
 Icons are provided by [Lucide](https://lucide.dev/), an open-source icon library. Internship requirements in the sample FAQ set follow the supplied task instructions; general program information is based on [CodeAlpha's official website](https://www.codealpha.tech/).
+
+## Deployment
+
+This repository includes a Render Blueprint for the Flask application. To deploy it, connect the GitHub repository in Render and create a Blueprint from `render.yaml`. The service uses Gunicorn, runs the `/api/health` check, and automatically deploys new commits from `main`.
+
+The Blueprint selects Render's free web service plan. Free services sleep after 15 minutes without traffic and may take about a minute to start on the next request. See [Render's free service limits](https://render.com/docs/free).

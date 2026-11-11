@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: codealpha-faq-assistant
+    runtime: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app --bind 0.0.0.0:$PORT --workers 1 --threads 4
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
