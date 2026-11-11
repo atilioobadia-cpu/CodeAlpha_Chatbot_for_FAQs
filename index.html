@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#eff7f7">
   <meta name="description" content="Find answers to common questions about Lingua and its translation tools.">
   <title>Lingua Help Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +55,7 @@
             </div>
             <form class="composer" id="chat-form">
               <label class="sr-only" for="question-input">Ask a question about Lingua</label>
-              <input id="question-input" type="text" placeholder="Type your question..." autocomplete="off" maxlength="240">
+              <i class="composer-search-icon" data-lucide="search" aria-hidden="true"></i><input id="question-input" type="text" placeholder="Search the guide, or say hello!" autocomplete="off" maxlength="240">
               <span class="composer-hint">Enter to send</span>
               <button class="send-button" type="submit" aria-label="Send question" disabled><i data-lucide="arrow-up" aria-hidden="true"></i></button>
             </form>
@@ -66,6 +66,7 @@
             <div class="aside-heading"><div><p class="eyebrow">HELP GUIDE</p><h2 id="popular-title">Popular topics</h2></div><span class="article-total" id="article-total">22 articles</span></div>
             <p class="aside-copy">Choose a question to get a quick answer, or open the full FAQ library.</p>
             <div class="popular-list" id="popular-questions"></div>
+            <button class="more-topics-button" id="more-topics" type="button" aria-expanded="false">More popular topics <i data-lucide="chevron-down" aria-hidden="true"></i></button>
             <button class="browse-all-button" type="button" data-view="faq">Browse all help articles <i data-lucide="arrow-right" aria-hidden="true"></i></button>
           </aside>
         </section>
