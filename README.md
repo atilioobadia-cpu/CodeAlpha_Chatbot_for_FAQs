@@ -36,7 +36,7 @@ python -m pip install -r requirements.txt
 python server.py
 ```
 
-Open [http://127.0.0.1:4174](http://127.0.0.1:4174) in your browser. The first run does not download NLTK corpora or language models; the tokenizer and stemmer work locally with the installed package.
+Open [http://127.0.0.1:4175](http://127.0.0.1:4175) in your browser. The first run does not download NLTK corpora or language models; the tokenizer and stemmer work locally with the installed package.
 
 ## How matching works
 

@@ -28,6 +28,11 @@ def normalize_question(text: str) -> str:
 
 EXACT_QUESTION_INDEX = {normalize_question(item["question"]): index for index, item in enumerate(FAQS)}
 FAQ_INDEX_BY_ID = {item["id"]: index for index, item in enumerate(FAQS)}
+SUGGESTED_QUESTION_FAQ_IDS = {
+    "what is codealpha": "about-codealpha",
+    "minimum tasks required": "ai-task-count",
+    "task submission form": "submission-form",
+}
 
 TASK_FAQ_IDS = {
     "1": "translation-task", "one": "translation-task", "first": "translation-task",
@@ -46,6 +51,10 @@ def faq_document(item: dict) -> str:
 
 def focused_question_index(question: str) -> int | None:
     """Resolve short, explicit intents before relying on general similarity."""
+    suggested_faq_id = SUGGESTED_QUESTION_FAQ_IDS.get(normalize_question(question))
+    if suggested_faq_id:
+        return FAQ_INDEX_BY_ID[suggested_faq_id]
+
     if preprocess(question) == ["codealpha"]:
         return FAQ_INDEX_BY_ID["about-codealpha"]
 
@@ -123,7 +132,7 @@ def request_too_large(_error):
     return jsonify({"error": "That request is too large. Keep your question under 240 characters."}), 413
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=4174, debug=False)
+    app.run(host="127.0.0.1", port=4175, debug=False)
 
 
 
