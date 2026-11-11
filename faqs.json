@@ -1,6 +1,7 @@
 [
   {
     "id": "about-codealpha",
+    "suggested": true,
     "category": "About CodeAlpha",
     "question": "What is CodeAlpha?",
     "answer": "CodeAlpha offers virtual internships and practical assignments intended to help learners build skills and portfolio projects. The specific program details and deadlines are provided in your offer letter and internship materials.",
@@ -43,6 +44,7 @@
   },
   {
     "id": "ai-task-count",
+    "suggested": true,
     "category": "AI internship tasks",
     "question": "How many AI tasks do I need to complete?",
     "answer": "The AI task sheet says to complete any two or three of the four listed tasks. It also says submitting only one task is incomplete, so plan to submit at least two and follow your cohort's submission form.",
@@ -50,6 +52,7 @@
   },
   {
     "id": "ai-task-list",
+    "suggested": true,
     "category": "AI internship tasks",
     "question": "What are the four Artificial Intelligence tasks?",
     "answer": "The task sheet lists a Language Translation Tool, an FAQ Chatbot, Music Generation with AI, and Object Detection and Tracking. Choose two or three tasks and follow each task's individual requirements.",
@@ -85,6 +88,7 @@
   },
   {
     "id": "repo-name",
+    "suggested": true,
     "category": "GitHub and LinkedIn",
     "question": "How should I name my GitHub repository?",
     "answer": "The internship instructions specify the format CodeAlpha_ProjectName. Replace ProjectName with the name of your project, for example CodeAlpha_FAQChatbot.",
@@ -113,6 +117,7 @@
   },
   {
     "id": "submission-form",
+    "suggested": true,
     "category": "Submissions and certificates",
     "question": "How do I submit a completed task?",
     "answer": "Submit your completed task through the submission form shared in your WhatsApp group. Follow the form's instructions and include the required project links and details.",
@@ -140,6 +145,13 @@
     "keywords": "completion certificate complete tasks evaluation QR verified certificate receive"
   },
   {
+    "id": "verify-certificate",
+    "category": "Submissions and certificates",
+    "question": "How can I verify a CodeAlpha certificate?",
+    "answer": "CodeAlpha says its certificates include a unique verification ID and can be checked on its website. Open the official certificate verification page and use the ID printed on your certificate; the internship task sheet also describes QR-verified certificates.",
+    "keywords": "verify validate authentic certificate QR code unique ID verification online check"
+  },
+  {
     "id": "recommendation-letter",
     "category": "Submissions and certificates",
     "question": "Does every intern receive a recommendation letter?",
@@ -150,7 +162,7 @@
     "id": "contact-support",
     "category": "Support",
     "question": "Where can I get help with internship instructions?",
-    "answer": "For task-specific questions, check your offer letter and ask in your cohort's WhatsApp group. The task sheet you shared lists WhatsApp +91 9336576683 and services@codealpha.tech; CodeAlpha's current website lists support@codealpha.tech for general support.",
+    "answer": "For task-specific questions, check your offer letter and cohort WhatsApp group. Your task sheet lists WhatsApp +91 9336576683 and services@codealpha.tech / services.codealpha@gmail.com. CodeAlpha's current website lists support@codealpha.tech and +91 522 3369892 for general support. If details differ, confirm with your cohort or official support.",
     "keywords": "contact support email help WhatsApp phone coordinator ask issue question services CodeAlpha"
   }
 ]

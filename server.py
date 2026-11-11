@@ -22,6 +22,20 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 with FAQ_PATH.open("r", encoding="utf-8-sig") as faq_file:
     FAQS = json.load(faq_file)
 
+def normalize_question(text: str) -> str:
+    """Normalize punctuation and case so an exact FAQ question always resolves."""
+    return " ".join(TOKENIZER.tokenize(text.casefold()))
+
+EXACT_QUESTION_INDEX = {normalize_question(item["question"]): index for index, item in enumerate(FAQS)}
+FAQ_INDEX_BY_ID = {item["id"]: index for index, item in enumerate(FAQS)}
+
+TASK_FAQ_IDS = {
+    "1": "translation-task", "one": "translation-task", "first": "translation-task",
+    "2": "faq-chatbot-task", "two": "faq-chatbot-task", "second": "faq-chatbot-task",
+    "3": "music-task", "three": "music-task", "third": "music-task",
+    "4": "object-detection-task", "four": "object-detection-task", "fourth": "object-detection-task",
+}
+
 def preprocess(text: str) -> list[str]:
     """Tokenize, normalize, remove stop words, and stem English text with NLTK."""
     cleaned = text.casefold().replace("’", "'")
@@ -29,6 +43,21 @@ def preprocess(text: str) -> list[str]:
 
 def faq_document(item: dict) -> str:
     return " ".join((item["question"], item["question"], item.get("keywords", ""), item.get("keywords", "")))
+
+def focused_question_index(question: str) -> int | None:
+    """Resolve short, explicit intents before relying on general similarity."""
+    if preprocess(question) == ["codealpha"]:
+        return FAQ_INDEX_BY_ID["about-codealpha"]
+
+    terms = normalize_question(question).split()
+    task_terms = {term for term in terms if term in TASK_FAQ_IDS}
+    if ("task" in terms or "tasks" in terms) and len(task_terms) == 1:
+        return FAQ_INDEX_BY_ID[TASK_FAQ_IDS[task_terms.pop()]]
+
+    normalized_terms = set(preprocess(question))
+    if "certif" in normalized_terms and normalized_terms.intersection({"verifi", "valid", "authent", "check"}):
+        return FAQ_INDEX_BY_ID["verify-certificate"]
+    return None
 
 VECTOR_COUNT = len(FAQS)
 VECTORIZER = TfidfVectorizer(tokenizer=preprocess, preprocessor=None, token_pattern=None, lowercase=False, ngram_range=(1, 2), sublinear_tf=True)
@@ -56,7 +85,7 @@ def health():
 
 @app.get("/api/faqs")
 def list_faqs():
-    return jsonify([{key: item[key] for key in ("id", "category", "question", "answer", "keywords")} for item in FAQS])
+    return jsonify([{key: item[key] for key in ("id", "category", "question", "answer", "keywords")} | {"suggested": item.get("suggested", False)} for item in FAQS])
 
 @app.post("/api/ask")
 def ask():
@@ -71,6 +100,14 @@ def ask():
         return jsonify({"error": "Enter a question to search the help guide."}), 400
     if len(question) > MAX_QUESTION_LENGTH:
         return jsonify({"error": f"Questions must be {MAX_QUESTION_LENGTH} characters or fewer."}), 400
+    exact_index = EXACT_QUESTION_INDEX.get(normalize_question(question))
+    if exact_index is not None:
+        exact = FAQS[exact_index]
+        return jsonify({"matched": True, "score": 1.0, "question": exact["question"], "answer": exact["answer"], "category": exact["category"]})
+    focused_index = focused_question_index(question)
+    if focused_index is not None:
+        focused = FAQS[focused_index]
+        return jsonify({"matched": True, "score": 0.95, "question": focused["question"], "answer": focused["answer"], "category": focused["category"]})
     if not preprocess(question):
         return jsonify({"matched": False, "score": 0, "message": "Add a few more details to your question."})
     scores = cosine_similarity(VECTORIZER.transform([question]), FAQ_MATRIX).ravel()

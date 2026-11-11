@@ -55,6 +55,25 @@ jobs:
           assert health.get_json()["faq_count"] == len(faq_response.get_json())
           assert health.get_json()["faq_count"] > 0
 
+          faqs = faq_response.get_json()
+          suggested = [faq for faq in faqs if faq.get("suggested")]
+          assert len(suggested) == 5
+          for faq in faqs:
+              exact = client.post("/api/ask", json={"question": faq["question"]})
+              assert exact.status_code == 200
+              assert exact.get_json()["matched"] is True
+              assert exact.get_json()["question"] == faq["question"]
+
+          paraphrases = {
+              "Tell me about CodeAlpha": "What is CodeAlpha?",
+              "What is task 2?": "What should the FAQ Chatbot do?",
+              "How do I verify my certificate?": "How can I verify a CodeAlpha certificate?",
+          }
+          for question, expected in paraphrases.items():
+              result = client.post("/api/ask", json={"question": question}).get_json()
+              assert result["matched"] is True
+              assert result["question"] == expected
+
           match = client.post("/api/ask", json={"question": "How many AI tasks should I complete?"})
           assert match.status_code == 200
           assert match.get_json()["matched"] is True

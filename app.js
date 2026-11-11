@@ -1,6 +1,5 @@
 const FAQS_URL = "/api/faqs";
 const ASK_URL = "/api/ask";
-const QUICK_QUESTIONS = ["How many AI tasks do I need to complete?", "How should I name my GitHub repository?", "How do I submit a completed task?"];
 const $ = selector => document.querySelector(selector);
 const messages = $("#messages");
 const input = $("#question-input");
@@ -241,7 +240,8 @@ async function loadFaqs() {
     $("#faq-count").textContent = String(faqItems.length);
     $("#welcome-time").dateTime = new Date().toISOString();
     $("#welcome-time").textContent = formattedTime();
-    renderQuestionButtons(quickAsks, QUICK_QUESTIONS, "quick-ask-chip");
+    const suggestedQuestions = faqItems.filter(item => item.suggested).map(item => item.question);
+    renderQuestionButtons(quickAsks, suggestedQuestions, "quick-ask-chip");
     renderFaqList();
     refreshIcons();
   } catch (error) {

@@ -2,21 +2,22 @@
 
 [![CI](https://github.com/atilioobadia-cpu/CodeAlpha_Chatbot_for_FAQs/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/atilioobadia-cpu/CodeAlpha_Chatbot_for_FAQs/actions/workflows/ci.yml)
 
-CodeAlpha Internship FAQ Chatbot is a web-based assistant for common questions about CodeAlpha internships, the four AI tasks, GitHub and LinkedIn instructions, submissions, and certificates. Visitors can ask questions in a chat interface or search the FAQ library. The chatbot ranks curated answers with TF-IDF and cosine similarity, then returns the closest match when its relevance score meets the threshold.
+CodeAlpha Internship FAQ Chatbot is a web-based assistant for common questions about CodeAlpha internships, the four AI tasks, GitHub and LinkedIn instructions, submissions, and certificates. Visitors can ask questions in a chat interface or search the FAQ library. Exact FAQ questions and focused task or certificate questions resolve directly; other questions are ranked with TF-IDF and cosine similarity and use a relevance threshold.
 
 ## Continuous integration
 
-GitHub Actions checks Python and JavaScript syntax and smoke-tests FAQ matching and fallback behavior on pushes and pull requests to `main`.
+GitHub Actions checks Python and JavaScript syntax, verifies that every FAQ and suggested question returns its intended answer, checks common paraphrases, and smoke-tests fallback behavior on pushes and pull requests to `main`.
 
 ## Features
 
 - Chat interface with suggested questions and source FAQ attribution.
+- Suggested questions are defined alongside FAQ content so each visible prompt has a matching answer.
 - Searchable FAQ library with category filters and expandable answers.
 - English text preprocessing with NLTK tokenization, stop-word removal, and stemming.
 - Scikit-learn TF-IDF vectors and cosine similarity for FAQ matching.
 - A relevance threshold and a clear fallback when no FAQ is a good match.
 - Local Flask API with a narrow mobile-sized preview on desktop and edge-to-edge layout on mobile.
-- Curated FAQs based on the CodeAlpha internship overview, AI task sheet, and official program information.
+- Curated FAQs based on the CodeAlpha internship overview, AI task sheet, and official program information, including certificate verification and current support contacts.
 
 ## Requirements
 
