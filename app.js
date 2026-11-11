@@ -89,6 +89,37 @@ function appendMessage(text, role, source = "") {
   messages.append(row);
   row.scrollIntoView({ behavior: "smooth", block: "nearest" });
   refreshIcons(row);
+  return bubble;
+}
+
+function appendThinkingMessage() {
+  const bubble = appendMessage("Checking the FAQ guide", "assistant");
+  bubble.classList.add("response-status");
+  bubble.setAttribute("role", "status");
+  const dots = document.createElement("span");
+  dots.className = "typing-dots";
+  dots.setAttribute("aria-hidden", "true");
+  for (let index = 0; index < 3; index += 1) dots.append(document.createElement("i"));
+  bubble.append(dots);
+  return bubble;
+}
+
+async function typeReply(bubble, text) {
+  const characters = Array.from(text);
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    bubble.textContent = text;
+    return;
+  }
+  bubble.classList.add("typing-text");
+  bubble.setAttribute("aria-live", "off");
+  const delay = Math.min(18, Math.max(7, 2100 / Math.max(characters.length, 1)));
+  for (const character of characters) {
+    bubble.append(document.createTextNode(character));
+    messages.scrollTop = messages.scrollHeight;
+    await new Promise(resolve => window.setTimeout(resolve, delay));
+  }
+  bubble.classList.remove("typing-text");
+  bubble.removeAttribute("aria-live");
 }
 
 function renderQuestionButtons(container, questions, className) {
@@ -111,21 +142,22 @@ async function askQuestion(value) {
   input.value = "";
   sendButton.disabled = true;
   input.disabled = true;
-  const loading = document.createElement("div");
-  loading.className = "response-status";
-  loading.setAttribute("role", "status");
-  loading.textContent = "Searching the help guide...";
-  messages.append(loading);
-  loading.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  const startedAt = performance.now();
+  const loading = appendThinkingMessage();
   try {
     const response = await fetch(ASK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question }) });
     if (!response.ok) throw new Error("The help service could not process this question.");
     const result = await response.json();
-    loading.remove();
-    if (result.matched) appendMessage(result.answer, "assistant", `${result.category} · ${result.question}`);
-    else appendMessage("I couldn't find a close answer in the guide. Try asking about languages, translation limits, saved phrases, privacy, or troubleshooting, or browse the FAQ library.", "assistant", "No close match");
+    const thinkingTimeLeft = 650 - (performance.now() - startedAt);
+    if (thinkingTimeLeft > 0) await new Promise(resolve => window.setTimeout(resolve, thinkingTimeLeft));
+    loading.closest(".message-row")?.remove();
+    const answer = result.matched
+      ? result.answer
+      : "I couldn't find a close answer in the guide. Try asking about languages, translation limits, saved phrases, privacy, or troubleshooting, or browse the FAQ library.";
+    const source = result.matched ? `${result.category} · ${result.question}` : "No close match";
+    await typeReply(appendMessage("", "assistant", source), answer);
   } catch (error) {
-    loading.remove();
+    loading.closest(".message-row")?.remove();
     appendMessage("I can't reach the help service right now. Please check that the local server is running, then try again.", "assistant", "Connection issue");
     console.error("FAQ request failed:", error);
   } finally {

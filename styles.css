@@ -467,3 +467,35 @@ body { min-height: 100dvh; display: grid; place-items: center; background: #e9ed
 @media (max-height: 700px) and (min-width: 481px) {
   .phone-frame { height: calc(100dvh - 16px); min-height: calc(100dvh - 16px); }
 }
+
+/* FAQ search layout and answer feedback */
+.faq-view, .messages, .category-list, .quick-ask-list { scrollbar-width: none; -ms-overflow-style: none; }
+.faq-view::-webkit-scrollbar, .messages::-webkit-scrollbar, .category-list::-webkit-scrollbar, .quick-ask-list::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.faq-view { padding: 13px 12px; overflow-y: auto; }
+.faq-page-heading { margin-bottom: 11px; }
+.faq-page-heading h2 { font-size: 18px; line-height: 1.25; }
+.faq-page-heading p:last-child { margin-top: 4px; color: #596771; font-size: 11px; line-height: 1.4; }
+.faq-search { width: 100%; height: 46px; min-height: 46px; padding: 0 12px; border: 1px solid #aebbc3; border-radius: 9px; background: #fff; display: flex; align-items: center; gap: 10px; }
+.faq-search:focus-within { border-color: #087b76; outline: 2px solid #d9eeeb; outline-offset: 1px; }
+.faq-search>svg { width: 19px; height: 19px; flex: 0 0 auto; color: #596a76; }
+.faq-search input { min-width: 0; height: 100%; padding: 0; color: #24333d; font-size: 13px; font-weight: 600; }
+.faq-search input::placeholder { color: #697781; opacity: 1; }
+.faq-search kbd { display: none; }
+.category-list { min-height: 0; margin: 10px 0 13px; display: flex; flex-wrap: wrap; align-items: center; gap: 7px; overflow: visible; }
+.category-chip { min-height: 34px; padding: 5px 10px; border: 1px solid #c7d2d9; border-radius: 7px; background: #fff; color: #3f4e58; font-size: 10px; line-height: 1.2; white-space: normal; }
+.category-chip.active { border-color: #087b76; background: #087b76; color: #fff; }
+.faq-results-heading { margin: 0 0 5px; }
+.faq-results-heading h3 { color: #1f2d36; font-size: 15px; font-weight: 800; }
+.faq-results-heading span { color: #5c6972; font-size: 11px; }
+.faq-question { min-height: 44px; font-size: 11px; line-height: 1.4; }
+.response-status { min-height: 39px; padding: 9px 13px; display: inline-flex; align-items: center; gap: 8px; color: #52646a; font-size: 12px; }
+.typing-dots { display: inline-flex; align-items: center; gap: 4px; }
+.typing-dots i { width: 5px; height: 5px; border-radius: 50%; background: #087b76; animation: typing-dot 1s ease-in-out infinite; }
+.typing-dots i:nth-child(2) { animation-delay: .14s; }
+.typing-dots i:nth-child(3) { animation-delay: .28s; }
+@keyframes typing-dot { 0%, 60%, 100% { opacity: .38; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+.typing-text::after { content: ""; display: inline-block; width: 2px; height: 1em; margin-left: 2px; vertical-align: -2px; background: currentColor; animation: typing-caret .8s steps(1, end) infinite; }
+@keyframes typing-caret { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .typing-dots i, .typing-text::after { animation: none; }
+}
