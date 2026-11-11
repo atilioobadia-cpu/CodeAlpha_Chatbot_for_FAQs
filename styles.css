@@ -39,10 +39,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid #a5d7d2; outline-
 .header-meta { display: inline-flex; align-items: center; gap: 8px; margin-left: 8px; color: var(--muted); font-size: 12px; font-weight: 700; white-space: nowrap; }
 .status-dot, .source-badge>span { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); display: inline-block; }
 .main-content { width: min(100%, 1280px); flex: 1; margin: 0 auto; padding: 30px clamp(22px, 5vw, 72px) 36px; }
-.page-intro { min-height: 118px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .eyebrow { margin: 0 0 6px; }
-.page-intro h1 { margin: 0; font-size: clamp(26px, 3vw, 34px); line-height: 1.12; letter-spacing: -.035em; font-weight: 800; }
-.intro-copy { max-width: 650px; margin: 7px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .intro-note { min-width: 225px; padding: 12px 15px; border: 1px solid var(--brand-border); border-radius: 13px; color: var(--muted); display: flex; align-items: center; gap: 11px; font-size: 11px; line-height: 1.5; }
 .intro-note svg { width: 21px; height: 21px; flex: 0 0 auto; color: var(--brand); }
 .intro-note strong { color: var(--text); font-size: 12px; }
@@ -170,9 +167,6 @@ button:focus-visible, input:focus-visible { outline: 3px solid #a5d7d2; outline-
   .nav-link svg { width: 14px; height: 14px; }
   .nav-count { min-width: 18px; height: 18px; font-size: 9px; }
   .main-content { padding: 21px 16px 26px; }
-  .page-intro { min-height: 0; margin-bottom: 16px; align-items: flex-start; }
-  .page-intro h1 { max-width: 480px; font-size: 25px; }
-  .intro-copy { font-size: 12px; }
   .intro-note { display: none; }
   .chat-view { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 13px; }
   .chat-panel { min-height: 550px; padding: 0 15px 14px; border-radius: 15px; }
@@ -229,9 +223,6 @@ body { background: #eceeef; color: #16212b; }
 .nav-link.active .nav-count { background: rgba(255,255,255,.18); color: #fff; }
 .status-dot, .source-badge>span { background: #087b76; }
 .main-content { background: #f0f1f2; }
-.page-intro { border: 1px solid #d9e0e5; border-radius: 7px; background: #fff; }
-.page-intro h1 { color: #15212c; }
-.intro-copy { color: #65727d; }
 .intro-note { border-color: #d9e0e5; border-radius: 6px; background: #fff; }
 .intro-note svg { color: #087b76; }
 .chat-panel, .popular-panel, .faq-view { border: 1px solid #d8e0e5; border-radius: 7px; background: #fff; }
@@ -276,8 +267,7 @@ body { background: #eceeef; color: #16212b; }
 }
 
 /* Readability and spacing fixes from the current browser view */
-.page-intro h1 { color: #15212b; font-weight: 800; }
-.intro-copy, .aside-copy { color: #53616c; font-weight: 600; }
+.aside-copy { color: #53616c; font-weight: 600; }
 .panel-heading h2, .aside-heading h2, .faq-page-heading h2 { color: #1e2a34; font-weight: 800; }
 .panel-heading p, .message-source, .privacy-note, .composer-hint, .article-total { color: #5e6b75; font-weight: 600; }
 .sender, .quick-asks-heading>span, .eyebrow, .source-badge { color: #43525d; font-weight: 800; }
@@ -323,10 +313,6 @@ body { background: #eceeef; color: #16212b; }
 
 /* Conversation layout based on the supplied chat reference */
 .main-content { padding-top: 23px; }
-.page-intro { width: min(100%, 760px); min-height: 0; margin: 0 auto 13px; padding: 0 4px; border: 0; background: transparent; }
-.page-intro .eyebrow { margin-bottom: 3px; }
-.page-intro h1 { font-size: 25px; }
-.page-intro .intro-copy { margin-top: 3px; font-size: 13px; }
 .intro-note { display: none; }
 .chat-view { min-height: 0; display: flex; justify-content: center; }
 .chat-panel { width: min(100%, 760px); height: clamp(500px, calc(100vh - 260px), 760px); min-height: 500px; padding: 0 0 14px; overflow: hidden; border-radius: 16px; display: flex; flex-direction: column; background: #fff; }
@@ -367,9 +353,6 @@ body { background: #eceeef; color: #16212b; }
 .privacy-note { margin: 9px 12px 0; color: #657579; font-size: 10px; }
 @media (max-width: 680px) {
   .main-content { padding: 15px 12px 20px; }
-  .page-intro { margin-bottom: 10px; }
-  .page-intro h1 { font-size: 21px; }
-  .page-intro .intro-copy { font-size: 12px; }
   .chat-panel { height: calc(100dvh - 235px); min-height: 440px; max-height: 690px; }
   .panel-heading { min-height: 72px; padding-inline: 15px; }
   .panel-icon { width: 42px; height: 42px; }
@@ -402,10 +385,6 @@ body { min-height: 100dvh; display: grid; place-items: center; background: #e9ed
 .brand-copy strong { font-size: 15px; }
 .header-meta { margin-left: auto; gap: 6px; font-size: 10px; }
 .main-content { width: 100%; max-width: none; min-height: 0; margin: 0; padding: 9px 13px 0; background: #f3f7f7; display: flex; flex: 1 1 auto; flex-direction: column; overflow: hidden; }
-.page-intro { width: 100%; min-height: 0; margin: 0 0 8px; padding: 0 3px; flex: 0 0 auto; }
-.page-intro .eyebrow { margin: 0 0 1px; font-size: 8px; }
-.page-intro h1 { font-size: 20px; line-height: 1.15; }
-.page-intro .intro-copy { margin-top: 2px; font-size: 11px; }
 .view-shell { min-height: 0; display: flex; flex: 1 1 auto; perspective: none; }
 .view { width: 100%; min-height: 0; }
 .view.active { display: flex; flex: 1 1 auto; flex-direction: column; }
@@ -481,8 +460,8 @@ body { min-height: 100dvh; display: grid; place-items: center; background: #e9ed
 .faq-search input { min-width: 0; height: 100%; padding: 0; color: #24333d; font-size: 13px; font-weight: 600; }
 .faq-search input::placeholder { color: #697781; opacity: 1; }
 .faq-search kbd { display: none; }
-.category-list { min-height: 0; margin: 10px 0 13px; display: flex; flex-wrap: wrap; align-items: center; gap: 7px; overflow: visible; }
-.category-chip { min-height: 34px; padding: 5px 10px; border: 1px solid #c7d2d9; border-radius: 7px; background: #fff; color: #3f4e58; font-size: 10px; line-height: 1.2; white-space: normal; }
+.category-list { min-height: 36px; margin: 10px 0 13px; display: flex; flex-wrap: nowrap; align-items: center; gap: 7px; overflow-x: auto; overflow-y: hidden; padding: 0 0 4px; scroll-snap-type: x proximity; }
+.category-chip { min-height: 34px; flex: 0 0 auto; padding: 5px 10px; border: 1px solid #c7d2d9; border-radius: 7px; background: #fff; color: #3f4e58; font-size: 10px; line-height: 1.2; white-space: nowrap; scroll-snap-align: start; }
 .category-chip.active { border-color: #087b76; background: #087b76; color: #fff; }
 .faq-results-heading { margin: 0 0 5px; }
 .faq-results-heading h3 { color: #1f2d36; font-size: 15px; font-weight: 800; }
