@@ -15,7 +15,7 @@ GitHub Actions checks Python and JavaScript syntax and smoke-tests FAQ matching 
 - English text preprocessing with NLTK tokenization, stop-word removal, and stemming.
 - Scikit-learn TF-IDF vectors and cosine similarity for FAQ matching.
 - A relevance threshold and a clear fallback when no FAQ is a good match.
-- Local Flask API with a phone-style preview on desktop and edge-to-edge layout on mobile.
+- Local Flask API with a narrow mobile-sized preview on desktop and edge-to-edge layout on mobile.
 - Curated FAQs about Lingua's translation, language choices, saved items, privacy, and troubleshooting.
 
 ## Requirements
