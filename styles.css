@@ -80,6 +80,7 @@ button:focus-visible, input:focus-visible { outline: 3px solid #a5d7d2; outline-
 .message-source { display: block; margin: 5px 2px 0; color: #75858a; font-size: 10px; line-height: 1.4; }
 .response-status { padding: 8px 0; color: var(--muted); font-size: 12px; }
 .quick-asks { padding: 11px 0 12px; border-top: 1px solid var(--line-soft); }
+.chat-controls { position: relative; z-index: 1; flex: 0 0 auto; margin-top: auto; background: #fff; }
 .quick-asks-heading { margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .quick-asks-heading>span { color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .11em; }
 .text-link { padding: 2px 0; border: 0; background: transparent; color: var(--brand); display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 800; cursor: pointer; }
@@ -338,6 +339,7 @@ body { background: #eceeef; color: #16212b; }
 .user-row .sender { margin-right: 4px; text-align: right; }
 .message-time, .message-source { display: block; margin: 5px 4px 0; color: #65797b; font-size: 11px; line-height: 1.35; font-weight: 600; }
 .quick-asks { padding: 11px 18px 12px; border-top: 0; background: #fff; flex: 0 0 auto; }
+.chat-controls { margin-top: auto; background: #fff; }
 .quick-asks-heading { margin-bottom: 8px; }
 .quick-asks-heading>span { color: #657579; font-size: 10px; }
 .quick-ask-list { gap: 8px; }

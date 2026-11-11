@@ -128,7 +128,7 @@ function renderQuestionButtons(container, questions, className) {
     button.type = "button";
     button.className = className;
     button.textContent = typeof item === "string" ? item : item.question;
-    button.addEventListener("click", () => askQuestion(button.textContent));
+    button.dataset.question = button.textContent;
     container.append(button);
   });
 }
@@ -252,6 +252,10 @@ async function loadFaqs() {
 }
 
 document.querySelectorAll("[data-view]").forEach(button => button.addEventListener("click", () => setView(button.dataset.view)));
+quickAsks.addEventListener("click", event => {
+  const suggestion = event.target.closest(".quick-ask-chip");
+  if (suggestion) askQuestion(suggestion.dataset.question || suggestion.textContent);
+});
 $("#chat-form").addEventListener("submit", event => { event.preventDefault(); askQuestion(input.value); });
 input.addEventListener("input", () => { sendButton.disabled = !input.value.trim() || isAnswering; });
 faqSearch.addEventListener("input", renderFaqList);

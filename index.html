@@ -42,17 +42,25 @@
                   <div class="message-content"><span class="sender">CodeAlpha support</span><div class="bubble assistant-bubble">Hello! Ask me about CodeAlpha internships, AI task requirements, GitHub repositories, LinkedIn posts, submissions, or certificates. What would you like to know?</div><time class="message-time" id="welcome-time"></time><span class="message-source">Answers from CodeAlpha's program guide</span></div>
                 </article>
               </div>
-              <div class="quick-asks">
-                <div class="quick-asks-heading"><span>SUGGESTED QUESTIONS</span><button class="text-link" type="button" data-view="faq">Browse all FAQs <i data-lucide="arrow-up-right" aria-hidden="true"></i></button></div>
-                <div class="quick-ask-list" id="quick-asks"></div>
+              <div class="chat-controls">
+                <div class="quick-asks">
+                  <div class="quick-asks-heading"><span>SUGGESTED QUESTIONS</span><button class="text-link" type="button" data-view="faq">Browse all FAQs <i data-lucide="arrow-up-right" aria-hidden="true"></i></button></div>
+                  <div class="quick-ask-list" id="quick-asks" role="group" aria-label="Suggested questions">
+                    <button class="quick-ask-chip" type="button" data-question="What is CodeAlpha?">What is CodeAlpha?</button>
+                    <button class="quick-ask-chip" type="button" data-question="How many AI tasks do I need to complete?">How many AI tasks do I need to complete?</button>
+                    <button class="quick-ask-chip" type="button" data-question="What are the four Artificial Intelligence tasks?">What are the four Artificial Intelligence tasks?</button>
+                    <button class="quick-ask-chip" type="button" data-question="How should I name my GitHub repository?">How should I name my GitHub repository?</button>
+                    <button class="quick-ask-chip" type="button" data-question="How do I submit a completed task?">How do I submit a completed task?</button>
+                  </div>
+                </div>
+                <form class="composer" id="chat-form">
+                  <label class="sr-only" for="question-input">Ask a question about CodeAlpha</label>
+                  <input id="question-input" type="text" placeholder="Type your question..." autocomplete="off" maxlength="240">
+                  <span class="composer-hint">Enter to send</span>
+                  <button class="send-button" type="submit" aria-label="Send question" disabled><i data-lucide="send" aria-hidden="true"></i></button>
+                </form>
+                <p class="privacy-note">Answers come from CodeAlpha's program guide and FAQ content.</p>
               </div>
-              <form class="composer" id="chat-form">
-                <label class="sr-only" for="question-input">Ask a question about CodeAlpha</label>
-                <input id="question-input" type="text" placeholder="Type your question..." autocomplete="off" maxlength="240">
-                <span class="composer-hint">Enter to send</span>
-                <button class="send-button" type="submit" aria-label="Send question" disabled><i data-lucide="send" aria-hidden="true"></i></button>
-              </form>
-              <p class="privacy-note">Answers come from CodeAlpha's program guide and FAQ content.</p>
             </section>
           </section>
 
